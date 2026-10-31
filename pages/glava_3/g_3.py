@@ -1,0 +1,63 @@
+import streamlit as st
+import fun_g3
+
+# Настройка параметров данной страницы
+st.set_page_config(
+    page_title="Глава 3", # Текст на вкладке браузера
+    page_icon='📕',       # Иконка на вкладке браузера
+    layout="wide",        # Использовать всю ширину страницы
+    initial_sidebar_state="auto",  # Развернуть боковую панель
+)
+
+# Текст по центру страницы
+st.header("👩🏻‍💻Глава 3. Озвучивание текстов с библиотекой gTTS🐍")
+
+# Боковая панель
+with st.sidebar:
+    # Контейнер
+    cont_1 = st.container(width=800)
+
+# Контейнер
+with cont_1:
+    # Раскрывающийся список
+    options = st.selectbox("Листинги главы 3",
+        ("Листинг 3.1", "Листинг 3.2", "Листинг 3.3", "Листинг 3.4", "Листинг 3.5",
+         "Листинг 3.6", "Листинг 3.7",
+         ),
+        index=None,
+        placeholder="Выберите листинг..."
+    )
+
+# Контейнер
+cont = st.container(width=800)
+with cont:
+    if options is None:
+        st.write('Листинг не выбран')
+        st.image("Python_Book.jpg", width=350)
+
+    elif options == "Листинг 3.1":
+        with st.expander("🔍 Показать код 📋", expanded=True):
+            path = 'pages/glava_3/Listing_3_1.py'
+            file = open(path, 'r')
+            code = file.read()
+            st.code(code, language="python", line_numbers=True)
+        with st.expander("🔍 Показать результат 💻"):
+            fun_g3.run_3_1()
+
+    elif options == "Листинг 3.2":
+        with st.expander("🔍 Показать код 📋", expanded=True):
+            path = 'pages/glava_3/Listing_3_2.py'
+            file = open(path, 'r')
+            code = file.read()
+            st.code(code, language="python", line_numbers=True)
+        with st.expander("🔍 Показать результат 💻"):
+            fun_g3.run_3_2()
+
+    elif options == "Листинг 3.3":
+        with st.expander("🔍 Показать код 📋", expanded=True):
+            path = 'pages/glava_3/Listing_3_3.py'
+            file = open(path, 'r')
+            code = file.read()
+            st.code(code, language="python", line_numbers=True)
+        with st.expander("🔍 Показать результат 💻"):
+            fun_g3.run_3_3()
