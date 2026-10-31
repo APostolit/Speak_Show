@@ -1,0 +1,6 @@
+Последняя модель
+v3_en_indic
+Частота дискретизации
+8000, 24000, 48000, 
+Доступные спикеры
+tamil_female, bengali_female, malayalam_male, manipuri_female, assamese_female, gujarati_male, telugu_male, kannada_male, hindi_female, rajasthani_female, kannada_female, bengali_male, tamil_male, gujarati_female, assamese_male, random, 
