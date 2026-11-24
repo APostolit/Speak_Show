@@ -33,7 +33,7 @@ cont = st.container(width=800)
 with cont:
     if options is None:
         st.write('Листинг не выбран')
-        st.image("Python_Book.jpg", width=350)
+        st.image("Python_Book.jpg", width=400)
 
     elif options == "Листинг 2.1":
         with st.expander("🔍 Показать код 📋", expanded=True):
