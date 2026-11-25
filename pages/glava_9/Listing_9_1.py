@@ -1,25 +1,15 @@
-# Листинг 8.1
-from lipsync import LipSync
-import torch
+# Листинг 9.1
+import ffmpeg
+import os
 
-def made_avatar(face, audio, my_model, outfile):
-    # Получить устройство
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    lip = LipSync(
-        model='wav2lip',
-        checkpoint_path=my_model,
-        nosmooth=True,
-        device=device,
-        cache_dir='cache',
-        img_size=96,
-        save_cache=True,
-    )
-    lip.sync(face=face, audio_file=audio, outfile=outfile)
+def revers_video(file_inp,file_out):
+    input_video = ffmpeg.input(file_inp)
+    output_video = input_video.filter("reverse")  # Переворачиваем видеоряд
+    ffmpeg.output(output_video, file_out).run(overwrite_output=True)
 
 if __name__ == '__main__':
-    # Видео из фото
-    get_face = 'images/Vita_1.jpg'
-    get_aud = 'audio/ludk_a_lodk.wav'
-    net_model = 'weights/wav2lip_gan.pth'
-    out_file = 'video_out/vita_ludk.mp4'
-    made_avatar(get_face, get_aud, net_model, out_file)
+    # Текущий каталог
+    exe_path = os.getcwd()
+    input_file = exe_path + '/video_in/Юрский_образец.mp4'
+    output_file = exe_path + '/video_in/Юрский_образец_2.mp4'
+    revers_video(input_file, output_file)
