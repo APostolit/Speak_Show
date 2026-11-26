@@ -175,3 +175,69 @@ def run_9_9():
             video_file = open("video_out/Coffe-cat.mp4", "rb")
             video_bytes = video_file.read()
             st.video(video_bytes)
+
+def run_9_10():
+    st.markdown('#### 🐍 Подготовка видео файлов для создания говорящих аватаров 🧠')
+    with st.expander("🔍 Показать код 📋", expanded=True):
+        path = 'pages/glava_9/Listing_9_1.py'
+        file = open(path, 'r')
+        code = file.read()
+        st.code(code, language="python", line_numbers=True)
+
+    tab1, tab2, tab3 = (
+        st.tabs(["Исходный видео файл", "Реверсный видео файл", "Склеенный видео файл"]))
+    with tab1:
+        with st.container(width=800):
+            video_file = open("video_inp/u_obr.mp4", "rb")
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+    with tab2:
+        with st.container(width=800):
+            video_file = open("video_inp/u_2.mp4", "rb")
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+    with tab3:
+        with st.container(width=800):
+            video_file = open("video_inp/u_1_2.mp4", "rb")
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+
+def run_9_11():
+    st.markdown('#### 🐍 Озвучивание видео файла (склейка методом реверса)  🧠')
+    with st.container(width=800):
+        video_file = open("video_inp/u_4.mp4", "rb")
+        video_bytes = video_file.read()
+        st.video(video_bytes)
+
+def run_9_12():
+    st.markdown('#### 🐍 Подготовка видео файлов для создания говорящих аватаров 🧠')
+    with st.expander("🔍 Показать код 📋", expanded=True):
+        path = 'pages/glava_9/Listing_9_2.py'
+        file = open(path, 'r')
+        code = file.read()
+        st.code(code, language="python", line_numbers=True)
+
+    tab1, tab2, tab3 = (
+        st.tabs(["Исходный видео файл", "Отраженный видео файл", "Склеенный видео файл"]))
+    with tab1:
+        with st.container(width=800):
+            video_file = open("video_inp/m.mp4", "rb")
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+    with tab2:
+        with st.container(width=800):
+            video_file = open("video_inp/m_2.mp4", "rb")
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+    with tab3:
+        with st.container(width=800):
+            video_file = open("video_inp/m_1_2.mp4", "rb")
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+
+def run_9_13():
+    st.markdown('#### 🐍 Пример видео доклада на конференции 🧠')
+    with st.container(width=800):
+        video_file = open("video_out/Dokl_2_VGA.mp4", "rb")
+        video_bytes = video_file.read()
+        st.video(video_bytes)
